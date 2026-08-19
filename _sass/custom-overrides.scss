@@ -1,0 +1,267 @@
+// ---------------------------------------------------------------
+// The Continuity Institute — Minimal Mistakes theme overrides
+// Import this at the END of assets/css/main.scss, after the
+// Minimal Mistakes partials, so these rules win the cascade.
+// ---------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #1B2A4A;
+  --ink-soft: #3A4A68;
+  --paper: #EEF0EA;
+  --paper-card: #FBFBF8;
+  --charcoal: #2A2A28;
+  --verdigris: #3D6B63;
+  --rule: #CBCDC2;
+}
+
+body {
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: 'Source Serif 4', serif;
+}
+
+.masthead {
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+
+.site-title {
+  font-family: 'Newsreader', serif;
+  font-weight: 600;
+  color: var(--ink) !important;
+}
+
+h1, h2, h3, .page__title, .archive__item-title {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.masthead .greedy-nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+// Splash header — swap the default image overlay for a flat ink band
+.page__hero--overlay {
+  background: var(--ink);
+  .page__title, .page__lead { color: var(--paper); font-family: 'Newsreader', serif; }
+}
+
+.btn--primary {
+  background: var(--verdigris);
+  border-color: var(--verdigris);
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+
+  &:hover { background: #2f5750; }
+}
+
+// Feature row (research areas)
+.feature__wrapper .archive__item {
+  border: 1px solid var(--rule);
+  background: var(--paper-card);
+  padding: 1.5rem;
+}
+
+// Stats bar
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin: 2rem 0;
+
+  .stat {
+    flex: 1 1 160px;
+    padding: 1.4rem 1.2rem;
+    border-left: 1px solid var(--rule);
+    &:first-child { border-left: none; }
+
+    .num {
+      display: block;
+      font-family: 'Newsreader', serif;
+      font-size: 2rem;
+      color: var(--ink);
+    }
+    .label {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// Publications list (working-paper catalog style)
+.pub-list {
+  border-top: 1px solid var(--ink);
+
+  .pub {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+
+    .catno {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--verdigris);
+    }
+    h3 { margin: 0.4rem 0; font-size: 1.2rem; }
+    p { color: var(--ink-soft); font-size: 0.95rem; }
+    .meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+    }
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin: 1.5rem 0 3rem;
+
+  input[type="email"] {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--ink);
+    border-right: none;
+    background: var(--paper-card);
+    color: var(--charcoal);
+    width: 260px;
+
+    &:focus { outline: 2px solid var(--verdigris); outline-offset: -2px; }
+  }
+
+  .btn--primary { border-radius: 0; }
+}
+
+// Selected staff grid
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 1.5rem 0;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.staff-card {
+  background: var(--paper-card);
+  padding: 1.6rem 1.4rem;
+  position: relative;
+
+  .staff-photo {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--paper);
+    margin-bottom: 1rem;
+  }
+
+  .fellow-no {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--verdigris);
+    letter-spacing: 0.04em;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.2rem;
+  }
+
+  .role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--verdigris);
+    margin-bottom: 0.6rem;
+  }
+
+  .focus {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .contact {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+}
+
+.staff-viewall {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 1.5rem 0 3rem;
+
+  a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+}
+
+// Pull quote band
+.quote-band {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Newsreader', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  border: none;
+
+  cite {
+    display: block;
+    margin-top: 1.2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: normal;
+    font-size: 0.78rem;
+    color: #9FB3C8;
+  }
+}
+
+
+
+.staff-photo-actual {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.staff-card h3 {
+  padding-top: 0.5rem;
+}
