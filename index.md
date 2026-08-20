@@ -35,11 +35,11 @@ feature_row:
   <div class="stat"><span class="num">1,400+</span><span class="label">Citations in policy</span></div>
 </div> -->
 
-## Areas of Work
+# Areas of Work
 
 {% include feature_row %}
 
-## Our People
+# Our Team
 <div class="staff-grid">
   <div class="staff-card">
     <!-- <div class="staff-photo" style="background:#1B2A4A;">EV</div> -->
