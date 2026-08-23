@@ -121,8 +121,8 @@ feature_row:
   <cite>— Dr. Elena Voss, Director of Economic Resilience Research</cite>
 </blockquote> -->
 
-## The Weekly Brief, in your inbox
+<!-- ## The Weekly Brief, in your inbox
 
 One email, every Friday: the paper that mattered, the number that changed, and the debate to watch next week.
 
-{% include newsletter_form.html %}
+{% include newsletter_form.html %} -->
